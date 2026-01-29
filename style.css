@@ -13,8 +13,6 @@ form{
 #product-section{
     width: 100%;
     border-radius: 5px;
-    border: 2px solid peachpuff;
-    background-color: peachpuff;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
