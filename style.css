@@ -1,3 +1,7 @@
+body{
+    display: flex;
+    flex-direction: column;
+}
 form{
     display: flex;
 }
@@ -5,10 +9,39 @@ form{
     margin:4px
 }
 
-.product-section{
-    width: 100%;
-    height: 100vh;
+#product-section{
+    width: 90%;
     border-radius: 5px;
     border: 2px solid peachpuff;
     background-color: peachpuff;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-self: center;
+}
+
+.product{
+    margin: 5px;
+    border: 2px solid white;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    height:400px;
+    width:300px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px grey;
+}
+.product-img{
+    align-self: center;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+.product-title{
+    text-align: center;
+    padding: 4px;
+    margin: 0px;
+}
+.product-price{
+    text-align: center;
+    margin: 0px;
 }
