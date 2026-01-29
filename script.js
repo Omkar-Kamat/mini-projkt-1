@@ -17,3 +17,13 @@ fetch("https://dummyjson.com/products")
     });
   })
   .catch(console.error);
+
+const searchbtn = document.getElementById("search-btn")
+const searchbar = document.getElementById("search-bar")
+
+searchbtn.addEventListener("click",()=>{
+    const query = searchbar.ariaValueMax.trim;
+
+    window.location.href = `search.html?search=${encodeURIComponent(query)}`;
+    searchbar.value = "";
+})
