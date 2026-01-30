@@ -12,7 +12,9 @@ if (searchHistory.length === 0) {
         .forEach(item => {
             const div = document.createElement("div");
             div.className = "history-item";
-
+            div.onclick = () =>{
+                window.location.href = `search.html?search=${encodeURIComponent(item.query)}`
+            }
             const date = new Date(item.time);
 
             div.innerHTML = `
