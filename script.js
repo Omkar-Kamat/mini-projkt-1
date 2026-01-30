@@ -30,3 +30,4 @@ form.addEventListener("submit", (e) => {
 
   window.location.href = `search.html?search=${encodeURIComponent(query)}`;
 });
+
