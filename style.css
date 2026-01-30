@@ -115,3 +115,7 @@ form{
     box-shadow: 0px 2px 5px grey;
     border-radius: 1rem;
 }
+
+.page-btn{
+    display: flex;
+}
