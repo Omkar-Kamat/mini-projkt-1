@@ -20,11 +20,31 @@ fetch("https://dummyjson.com/products")
 
       productSection.appendChild(product);
       product.addEventListener("click",()=>{
+        let history = JSON.parse(localStorage.getItem("viewHistory")) || [];
+        console.log("View History: ",history)
+
+        let exists = history.some(element => element.id == item.id)
+
+        if(!exists){
+          history.unshift({
+            id: item.id ,
+            time: Date.now()
+          });
+        }else{
+          let foundItem = history.find(element => element.id == item.id)
+          history = history.filter((element)=>element !== foundItem)
+          foundItem.time = Date.now();
+          history.unshift(foundItem);
+        }
+        localStorage.setItem("viewHistory",JSON.stringify(history));
         window.location.href = `product.html?id=${item.id}`
       })
     });
   })
   .catch(err => console.error("Fetch failed:", err));
+
+
+
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();

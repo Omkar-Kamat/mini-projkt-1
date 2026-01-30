@@ -8,3 +8,4 @@ fetch(`https://dummyjson.com/products/${query}`)
 .then((product)=>{
     console.log(product);
 })
+
