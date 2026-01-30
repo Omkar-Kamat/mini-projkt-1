@@ -10,7 +10,6 @@
     <navbar class="navbar">
     <h2 class="heading">Product Store</h2>
 
-    <form id="search-form">
         <div class="search-element">
             <input type="text" id="search-bar" name="search" placeholder="Search products..." />
             <div id="suggestion-box"></div>
@@ -18,10 +17,10 @@
         <div class="search-element">
             <button type="submit" id="search-btn">Search</button>
         </div>
-        <div class="search-element">
-            <button onclick="goToHistory()">view history</button>
-        </div>
     </form>
+    <div>
+        <button onclick="goToHistory()">view history</button>
+    </div>
     </navbar>
     <section id="product-section"></section>
 
