@@ -19,6 +19,9 @@ fetch("https://dummyjson.com/products")
       `;
 
       productSection.appendChild(product);
+      product.addEventListener("click",()=>{
+        window.location.href = `product.html?id=${item.id}`
+      })
     });
   })
   .catch(err => console.error("Fetch failed:", err));
@@ -79,4 +82,4 @@ searchbar.addEventListener("input", () => {
 
 function goToHistory(){
   window.location.href = 'history.html'
-}
+} 
