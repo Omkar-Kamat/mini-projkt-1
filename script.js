@@ -2,6 +2,7 @@ const productSection = document.getElementById("product-section");
 const form = document.getElementById("search-form");
 const searchbar = document.getElementById("search-bar");
 
+
 fetch("https://dummyjson.com/products")
   .then(res => res.json())
   .then(({ products }) => {
@@ -27,6 +28,44 @@ form.addEventListener("submit", (e) => {
 
   const query = searchbar.value.trim();
   if (!query) return;
+  
+  console.log("Query: ",query)
+  let history = JSON.parse(localStorage.getItem("searchHistory")) || [];
+  console.log("History: ",history)
+
+  let exists = history.some(item => item.query.toLowerCase() === query.toLowerCase())
+
+  if(!exists){
+    history.unshift({
+      query: query,
+      time: Date.now()
+    });
+  }
+  localStorage.setItem("searchHistory",JSON.stringify(history));
 
   window.location.href = `search.html?search=${encodeURIComponent(query)}`;
 });
+
+const suggestionBox = document.getElementById("suggestion-box");
+searchbar.addEventListener("input",()=>{
+  console.log("suggestion working");
+
+  const text = searchbar.value.toLowerCase();
+  const history = JSON.parse(localStorage.getItem("searchHistory")) || [];
+  console.log("History: ",history)
+  const matches = history.filter(item => item.query.toLowerCase().includes(text))
+
+  suggestionBox.innerHTML = ""
+
+  matches.forEach(item=>{
+    const div = document.createElement("div");
+    div.className = "suggestion-item"
+    div.innerText = item.query
+
+    div.addEventListener("click",()=>{
+      searchbar.value = item.query;
+      suggestionBox.innerHTML = "";
+    })
+    suggestionBox.appendChild(div);
+  })
+})
