@@ -47,25 +47,32 @@ form.addEventListener("submit", (e) => {
 });
 
 const suggestionBox = document.getElementById("suggestion-box");
-searchbar.addEventListener("input",()=>{
-  console.log("suggestion working");
+searchbar.addEventListener("input", () => {
+  const text = searchbar.value.trim().toLowerCase();
+  suggestionBox.innerHTML = "";
 
-  const text = searchbar.value.toLowerCase();
+  if (!text) return;
+
   const history = JSON.parse(localStorage.getItem("searchHistory")) || [];
-  console.log("History: ",history)
-  const matches = history.filter(item => item.query.toLowerCase().includes(text))
 
-  suggestionBox.innerHTML = ""
+  const matches = history.filter(item =>
+    item.query.toLowerCase().includes(text)
+  );
 
-  matches.forEach(item=>{
+  matches.forEach(item => {
     const div = document.createElement("div");
-    div.className = "suggestion-item"
-    div.innerText = item.query
+    div.className = "suggestion-item";
+    div.innerText = item.query;
 
-    div.addEventListener("click",()=>{
+    div.addEventListener("click", () => {
       searchbar.value = item.query;
       suggestionBox.innerHTML = "";
-    })
+    });
+
     suggestionBox.appendChild(div);
-  })
-})
+  });
+});
+
+function goToHistory(){
+  window.location.href = 'history.html'
+}
