@@ -107,3 +107,11 @@ form{
     text-align: center;
     margin: 0px;
 }
+#product-detail{
+    background-color: rgb(234, 234, 234);   
+    width: 90vw;
+    align-self: center;
+    margin-top: 2rem;
+    box-shadow: 0px 2px 5px grey;
+    border-radius: 1rem;
+}
