@@ -1,13 +1,13 @@
 const historySection = document.getElementById("history-div");
 
-let searchHistory = JSON.parse(localStorage.getItem("searchHistory")) || [];
+let viewHistory = JSON.parse(localStorage.getItem("viewHistory")) || [];
 
 historySection.innerHTML = "";
 
-if (searchHistory.length === 0) {
-    historySection.innerHTML = "<p>No search history yet.</p>";
+if (viewHistory.length === 0) {
+    historySection.innerHTML = "<p>No view history yet.</p>";
 } else {
-    searchHistory
+    viewHistory
         .sort((a, b) => b.time - a.time)
         .forEach(item => {
             const div = document.createElement("div");
@@ -26,8 +26,8 @@ if (searchHistory.length === 0) {
         });
 }
 
-const clearSearchHistory = () => {
-    localStorage.removeItem("searchHistory");
-    searchHistory = [];
-    historySection.innerHTML = `<p class="empty-history">No search history yet.</p>`;
+const clearViewHistory = () => {
+    localStorage.removeItem("viewHistory");
+    viewHistory = [];
+    historySection.innerHTML = `<p class="empty-history">No view history yet.</p>`;
 };

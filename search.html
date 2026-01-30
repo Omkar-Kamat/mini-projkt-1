@@ -21,12 +21,24 @@
                 </div>
             </form>
             <div class="search-element">
-                <button class="nav-btn" onclick="goToHistory()">View History</button>
+                <button class="nav-btn" onclick="goToSearchHistory()">Search History</button>
+            </div>
+            <div class="search-element">
+                <button class="nav-btn" onclick="goToViewHistory()">View History</button>
             </div>
         </div>
     </navbar>
     </header>
-    <section id="product-section"></section>
+    <section id="product-section">
+        <div id="products">
+
+        </div>
+        <div class="page-btn-sec">
+            <button id="prev-btn" class="page-btn">Previous</button>
+            <div id="page-number"></div>
+            <button id="next-btn" class="page-btn">Next</button>
+        </div>
+    </section>
 
 </body>
 <script src="./search.js"></script>

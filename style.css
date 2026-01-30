@@ -75,13 +75,10 @@ form{
     width: 90vw;
     border-radius: 5px;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-self: center;
+    flex-direction: column;
     margin-top: 1rem;
     align-self: center;
 }
-
 .product{
     margin: 10px;
     border: 2px solid rgb(234, 234, 234);
@@ -114,8 +111,72 @@ form{
     margin-top: 2rem;
     box-shadow: 0px 2px 5px grey;
     border-radius: 1rem;
+    display: flex;
+    justify-content: space-evenly;
+}
+.product-detail-left{
+    /* height: 80vh; */
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+}
+.product-detail-right{
+    width: 55%;
+    /* height: 80vh; */
 }
 
-.page-btn{
+#image{
+    width: 90%;
+}
+
+.page-btn-sec{
     display: flex;
+    justify-content: center;
+    margin:2rem;
+}
+#page-number{
+    width:10rem;
+    font-size: 1.5rem;
+    text-align: center;
+}
+#products{
+    width: 90vw;
+    border-radius: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-self: center;
+    margin: 1rem 0rem;
+}
+.page-btn{
+    height: 3rem;
+    font-size: 1rem;
+    border-radius: 1.5rem;
+    padding: 1rem 1rem;
+    background-color: rgb(234, 234, 234);
+    border: 0px;
+    box-shadow: 0px 2px 5px grey;
+}
+
+#availability{
+    /* width: 4.5rem; */
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    border: 2px solid green;
+    color:green;
+    margin-top: 1rem;
+    align-self: self-start;
+}
+#title{
+    font-size: 2rem;
+    margin-top: 2rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.product-detail-right div{
+    padding: .25rem
 }
