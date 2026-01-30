@@ -9,6 +9,12 @@ form{
 .search-element{
     margin:4px
 }
+#suggestion-box{
+    position: absolute;
+    z-index: 2;
+    width: 150px;
+    background-color: peachpuff;
+}
 
 #product-section{
     width: 100%;
