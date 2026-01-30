@@ -48,17 +48,21 @@ form.addEventListener("submit", (e) => {
 
 const suggestionBox = document.getElementById("suggestion-box");
 searchbar.addEventListener("input", () => {
+  suggestionBox.style.display = "block"
   const text = searchbar.value.trim().toLowerCase();
   suggestionBox.innerHTML = "";
-
-  if (!text) return;
-
+  
+  if (!text) {
+    suggestionBox.style.display = "none"
+    return;
+  }
+  
   const history = JSON.parse(localStorage.getItem("searchHistory")) || [];
 
   const matches = history.filter(item =>
     item.query.toLowerCase().includes(text)
   );
-
+  
   matches.forEach(item => {
     const div = document.createElement("div");
     div.className = "suggestion-item";
