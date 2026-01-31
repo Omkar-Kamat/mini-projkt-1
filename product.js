@@ -77,3 +77,10 @@ searchbar.addEventListener("input", () => {
 function goToHistory(){
   window.location.href = 'history.html'
 } 
+
+function goToSearchHistory(){
+  window.location.href = 'history.html'
+} 
+function goToViewHistory(){
+  window.location.href = 'viewhistory.html'
+} 

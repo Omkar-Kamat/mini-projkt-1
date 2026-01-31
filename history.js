@@ -1,4 +1,4 @@
-const historySection = document.getElementById("history-div");
+const historySection = document.getElementById("search-history");
 
 let searchHistory = JSON.parse(localStorage.getItem("searchHistory")) || [];
 
@@ -18,7 +18,7 @@ if (searchHistory.length === 0) {
             const date = new Date(item.time);
 
             div.innerHTML = `
-                <div>${item.query}</div>
+                <div>${item.query.toUpperCase()}</div>
                 <div>${date.toLocaleString()}</div>
             `;
 
@@ -31,3 +31,10 @@ const clearSearchHistory = () => {
     searchHistory = [];
     historySection.innerHTML = `<p class="empty-history">No search history yet.</p>`;
 };
+function goToViewHistory(){
+  window.location.href = 'viewhistory.html'
+} 
+
+function goToHome(){
+    window.location.href = 'index.html'
+}
